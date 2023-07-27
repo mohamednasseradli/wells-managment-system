@@ -1,0 +1,226 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: url("../fonts/cairo/CairoFont.ttf");
+    font-family: 'Cairo', Arial, Helvetica, sans-serif;
+}
+
+
+:root {
+
+    --main-color: #2c3e50;
+    --color-1: #0984e3;
+    --color-2: #00b894;
+    --color-3: #fdcb6e;
+    --color-4: #e17055;
+    --color-5: #6c5ce7;
+    --color-6: #30336b;
+    --color-7: #27ae60;
+
+}
+
+
+a {
+    
+    text-decoration: none;
+    color: #ffFFFf;
+}
+ul, ol {
+    list-style: none;
+    padding: 0 ;
+}
+
+/*========== Sidebar Style ==============*/
+
+.sidebar-container {
+
+    min-height: 100vh;
+    background-color: #212529;
+}
+
+.sidebar .accordion-item,
+.sidebar .accordion-item .accordion-button {
+
+    background-color: unset !important;
+    border: unset;
+    color: #fff;
+    padding: 5px;
+}
+
+.sidebar .accordion-item .item-heading {
+
+    display: inline-block;
+    padding: 5px;
+    width: 100%;
+}
+
+.sidebar .accordion-item:hover .item-heading {
+
+    color: #80c4fc;
+}
+
+.sidebar {
+
+    padding-top: 30px;
+    color: white;
+    font-size: 18px;
+    position: sticky;
+    top: 0;
+}
+
+.sidebar * {
+    text-align: right !important;
+
+}
+
+.sidebar .accordion-item .item-heading.current {
+
+    /* padding-left: 5px; */
+    background-color: white !important;
+    display: inline-block;
+    color: #2e363f;
+    width: 100%;
+    border-radius: 10px;
+    position: relative;
+}
+
+.sidebar .accordion-item .item-heading.current .extender {
+
+    position: absolute;
+    top: 0;
+    left: -23px;
+    display: inline-block;
+    height: 100%;
+    width: 50px;
+    background-color: #fff;
+}
+
+/* After */
+.sidebar .accordion-item .item-heading.current .extender::before {
+
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 6px;
+    width: 20px;
+    height: 20px;
+    background-color: #212529;
+    border-bottom-left-radius: 100%;
+    box-shadow: -7px 8px 0px 7px #ffffff;
+
+}
+/* Before */
+.sidebar .accordion-item .item-heading.current .extender::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 6px;
+    width: 19px;
+    height: 20px;
+    background-color: #212529;
+    border-top-left-radius: 100%;
+    box-shadow: -7px -8px 0px 7px #ffffff;
+
+}
+
+.sidebar .accordion-item .accordion-button {
+    /* padding: 0; */
+    outline: none !important;
+}
+
+.sidebar .accordion-item .accordion-button::after {
+    all: unset;
+}
+
+.sidebar .accordion-item .accordion-button > span.plus {
+
+    color: #fff;
+    position: absolute;
+    left: 10px;
+}
+.sidebar .accordion-body {
+
+    padding: 5px 5px 5px 20px;
+}
+.sidebar .accordion-body a {
+
+    display: inline-block;
+    width: 100%;
+    padding: 5px;
+    color: #fff;
+    font-size: 14px;
+    padding-right: 15px;
+
+}
+
+.sidebar .accordion-body a:hover {
+
+    background-color: #2d4d5c;
+    cursor: pointer;
+}
+
+.sidebar .accordion .item-title {
+    padding-right: 10px;
+}
+
+
+.toggle-sidebar {
+
+    display: none;
+    color: #fff;
+    background-color: #212529;
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    line-height: 40px;
+    /* padding: 10px; */
+    border-radius: 100%;
+    z-index: 999;
+}
+
+
+
+/* 
+**
+**  Making Design Responsive
+**
+ */
+
+ @media only screen and (max-width: 992px) {
+
+
+    .table-responsive > table {
+    
+        min-width: 767px;
+    }
+
+    .sidebar-container {
+        display: none;
+        min-height: 100vh;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        overflow-y: scroll;
+        z-index: 998;
+
+    }
+    .show-sidebar {
+
+        display: block !important;
+
+        }
+
+    .toggle-sidebar {
+
+        display: block;
+    }
+    
+    .extender {
+
+        display: none !important;
+    }
+}
